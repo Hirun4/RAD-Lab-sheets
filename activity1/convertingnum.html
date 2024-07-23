@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Type Conversions</title>
+    <script>
+        // Convert strings to numbers using Number()
+        let str1 = "42";
+        let str2 = "3.1415";
+        let str3 = "0";
+        let str4 = " 56 ";
+        let str5 = "123abc";
+        let str6 = " ";
+
+        console.log('Number("42"):', Number(str1));
+        console.log('Number("3.1415"):', Number(str2));
+        console.log('Number("0"):', Number(str3));
+        console.log('Number(" 56 "):', Number(str4));
+        console.log('Number("123abc"):', Number(str5));
+        console.log('Number(" "):', Number(str6));
+
+        // Convert boolean values to numbers
+        let bool1 = true;
+        let bool2 = false;
+
+        console.log('Number(true):', Number(bool1));
+        console.log('Number(false):', Number(bool2));
+
+        // Convert dates to numbers
+        let date1 = new Date("2023-12-25");
+        let date2 = new Date("1970-01-01");
+
+        console.log('Number(new Date("2023-12-25")):', Number(date1));
+        console.log('Number(new Date("1970-01-01")):', Number(date2));
+    </script>
+</head>
+<body>
+</body>
+</html>

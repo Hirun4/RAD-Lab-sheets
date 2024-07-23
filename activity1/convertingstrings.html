@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Type Conversions</title>
+    <script>
+        // Convert numbers to strings using String()
+        let num1 = 123;
+        let num2 = 4.567;
+        let num3 = 0;
+        let num4 = -999;
+        let num5 = 1e10;
+
+        console.log('String(123):', String(num1));
+        console.log('String(4.567):', String(num2));
+        console.log('String(0):', String(num3));
+        console.log('String(-999):', String(num4));
+        console.log('String(1e10):', String(num5));
+
+        // Convert boolean values to strings
+        let bool1 = true;
+        let bool2 = false;
+
+        console.log('String(true):', String(bool1));
+        console.log('String(false):', String(bool2));
+
+        // Convert dates to strings
+        let date1 = new Date("2023-12-25");
+        let date2 = new Date("1970-01-01");
+
+        console.log('String(new Date("2023-12-25")):', String(date1));
+        console.log('String(new Date("1970-01-01")):', String(date2));
+    </script>
+</head>
+<body>
+</body>
+</html>
