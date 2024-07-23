@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Operations</title>
+    <script>
+        
+        function toLowerCaseString(str) {
+            return str.toLowerCase();
+        }
+
+        
+        function toUpperCaseString(str) {
+            return str.toUpperCase();
+        }
+
+        
+        function splitStringByCommas(str) {
+            return str.split(',');
+        }
+
+       
+        function findIndexOfSubstring(str, substr) {
+            return str.indexOf(substr);
+        }
+
+       
+        var originalString = "ProgrammoPhobia";
+        var lowerCaseString = toLowerCaseString(originalString);
+        var upperCaseString = toUpperCaseString(originalString);
+        var splitString = splitStringByCommas("Programmo,Phobia");
+        var indexOfSubstring = findIndexOfSubstring(originalString, "Phobia");
+
+        console.log('Lowercase String:', lowerCaseString);
+        console.log('Uppercase String:', upperCaseString);
+        console.log('Split String:', splitString);
+        console.log('Index of "Phobia":', indexOfSubstring);
+    </script>
+</head>
+<body>
+</body>
+</html>
