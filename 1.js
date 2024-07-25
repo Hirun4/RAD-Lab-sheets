@@ -15,3 +15,5 @@ function getGreeting(time) {
 console.log(getGreeting("09:30")); 
 console.log(getGreeting("14:45")); 
 console.log(getGreeting("21:00")); 
+console.log(getGreeting("20:00")); 
+
