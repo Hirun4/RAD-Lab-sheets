@@ -20,3 +20,5 @@ function getFruitColor(fruit) {
 getFruitColor('banana');    
 getFruitColor('pineapple'); 
 getFruitColor('apple');     
+
+//visit
