@@ -9,4 +9,4 @@ function findLargestNumber(num1, num2, num3) {
 }
 
 
-console.log(findLargestNumber(5, 10, 7)); 
+console.log(findLargestNumber(7, 10, 7)); 
