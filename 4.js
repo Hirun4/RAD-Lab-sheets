@@ -13,3 +13,5 @@ function isPrime(number) {
 
 console.log(isPrime(7));  
 console.log(isPrime(10));
+
+//visit
