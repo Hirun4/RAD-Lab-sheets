@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        input, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        <div>
+            <h2>Add Book</h2>
+            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="author" placeholder="Author">
+            <button onclick="addBook()">Add Book</button>
+        </div>
+        <div>
+            <h2>Borrow/Return Book</h2>
+            <input type="text" id="bookTitle" placeholder="Book Title">
+            <button onclick="borrowBook()">Borrow Book</button>
+            <button onclick="returnBook()">Return Book</button>
+        </div>
+        <div>
+            <h2>Output</h2>
+            <div id="output"></div>
+        </div>
+    </div>
+
+    <script>
+        class Library {
+            #books = []; // Private array for books
+
+            addBook(title, author) {
+                const newBook = {
+                    title: title,
+                    author: author,
+                    borrowed: false
+                };
+                this.#books.push(newBook);
+            }
+
+            findBook(title) {
+                for (let i = 0; i < this.#books.length; i++) {
+                    if (this.#books[i].title === title) {
+                        return i;
+                    }
+                }
+                return -1;
+            }
+
+            borrowBook(title) {
+                const bookIndex = this.findBook(title);
+                if (bookIndex !== -1 && !this.#books[bookIndex].borrowed) {
+                    this.#books[bookIndex].borrowed = true;
+                    return `${title} has been borrowed.`;
+                } else if (bookIndex !== -1 && this.#books[bookIndex].borrowed) {
+                    return `${title} is already borrowed.`;
+                } else {
+                    return `${title} is not available in the library.`;
+                }
+            }
+
+            returnBook(title) {
+                const bookIndex = this.findBook(title);
+                if (bookIndex !== -1 && this.#books[bookIndex].borrowed) {
+                    this.#books[bookIndex].borrowed = false;
+                    return `${title} has been returned.`;
+                } else if (bookIndex !== -1 && !this.#books[bookIndex].borrowed) {
+                    return `${title} was not borrowed.`;
+                } else {
+                    return `${title} is not available in the library.`;
+                }
+            }
+        }
+
+        const myLibrary = new Library();
+
+        function addBook() {
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            myLibrary.addBook(title, author);
+            document.getElementById('output').innerText = `${title} by ${author} added to the library.`;
+        }
+
+        function borrowBook() {
+            const title = document.getElementById('bookTitle').value;
+            const message = myLibrary.borrowBook(title);
+            document.getElementById('output').innerText = message;
+        }
+
+        function returnBook() {
+            const title = document.getElementById('bookTitle').value;
+            const message = myLibrary.returnBook(title);
+            document.getElementById('output').innerText = message;
+        }
+    </script>
+</body>
+</html>
