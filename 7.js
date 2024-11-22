@@ -14,4 +14,4 @@ function reverseNumber(num) {
 
 let sampleInput = 32243;
 let sampleOutput = reverseNumber(sampleInput);
-console.log(sampleOutput); 
+console.log(sampleOutput); //print in terminal

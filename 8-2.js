@@ -1,5 +1,5 @@
 class Library {
-    #books = []; // Private array for books
+    #books = []; // Private array for books*
 
     // Method to add a new book
     addBook(title, author) {
@@ -48,7 +48,7 @@ class Library {
     }
 }
 
-// Example usage
+
 const myLibrary = new Library();
 myLibrary.addBook("The Great Gatsby", "F. Scott Fitzgerald");
 myLibrary.addBook("To Kill a Mockingbird", "Harper Lee");
